@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login to FootCap</title>
+    <link rel="stylesheet" href="./login.css">
+  
+</head>
+<body>
+    <div>
+        <form class="form" id="login-form">
+            <p class="title">LOGIN </p>
+            <p class="message">Login to get full access to our wedsite </p>
+                    
+            <label>
+                <input class="input" type="email" id="email" placeholder="" required="">
+                <span>Email</span>
+            </label> 
+                
+            <label>
+                <input class="input" type="password" id="password" placeholder="" required="">
+                <span>Password</span>
+            </label>
+            
+            <button class="submit">login</button>
+            <p class="signin">create an acount ? <a href="./signUp.html">to register</a> </p>
+        </form>
+    </div>
+
+      <script>
+
+        let s=document.getElementById("sign")
+        let bd=document.getElementById("bd")
+         document.getElementById('login-form').addEventListener('submit', function(event) {
+          event.preventDefault();
+    
+          const email = document.getElementById('email').value;
+          const password = document.getElementById('password').value;
+    
+          const storedUserData = JSON.parse(localStorage.getItem('user'));
+          // if (storedUserData && storedUserData.email === email && storedUserData.password === password) {
+            if ( storedUserData.email === email && storedUserData.password === password) {
+    
+            alert('Login successful! Redirecting to Dashboard.'); 
+            window.open('./cart.html')
+    
+           
+          } else {
+            // if (!storedUserData || storedUserData.email !== email) {
+              if (storedUserData.email !== email) {
+    
+              alert('Email not found');
+            } else {
+              alert('Please enter correct password');
+            }
+          }
+        });
+      </script>
+
+</body>
+</html>

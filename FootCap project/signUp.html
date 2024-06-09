@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Signup</title>
+  <link rel="stylesheet" href="./signup.css">
+</head>
+<body>
+
+<main>
+
+  <form class="form" id="signup-form">
+    <p class="title" id="p1">Welcome to Footcap</p>
+    <p class="title">Register </p>
+    <p class="message">Signup now and get full access to our website. </p>
+        <div class="flex">
+        <label>
+            <input class="input" type="text" placeholder="" required="" id="name">
+            <span>name</span>
+        </label>
+    </div>  
+            
+    <label>
+        <input class="input" type="email" placeholder=""  id="email">
+        <span>Email</span>
+    </label> 
+        
+    <label>
+        <input class="input" type="password" placeholder=""  id="password">
+        <span>Password</span>
+    </label>
+    <label>
+        <input class="input" type="password" placeholder=""  id="confirmPassword">
+        <span>Confirm password</span>
+    </label>
+    <button type="submit" class="submit1">Submit</button>
+
+    <p class="signin">Already have an acount ? <a href="./login.html">login</a> </p>
+</form>
+</main>
+  <script>
+    document.getElementById('signup-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+
+      if (password !== confirmPassword) {
+        alert("Passwords don't match");
+        // window.location.assign('./cart.html')
+      }
+        else if (name === '' , email === '' , password === '' ) 
+      {
+        alert('Please fill in all fields');
+      } 
+        else {
+        const userData = {
+          name: name,
+          email: email,
+          password: password,
+        };
+
+        localStorage.setItem('user', JSON.stringify(userData));
+        alert('Sign up successful! Redirecting to login.');
+        window.open('./login.html') ;
+      }
+    });
+  </script>
+</body>
+</html>
