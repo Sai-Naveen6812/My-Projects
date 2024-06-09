@@ -1,0 +1,28 @@
+#user{
+    /* border: 2px solid; */
+    width: 85%;
+    margin: auto;
+    position: relative;
+    top: 40px;
+    color: #0b7286;
+}
+
+#user>span{
+    font-size: inherit;
+    color: black;
+}
+
+#option{
+    /* border: 2px solid; */
+    margin-top: 2%;
+    height: 45%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#submit{
+    width: 10%;
+    margin-top: 35px;
+}

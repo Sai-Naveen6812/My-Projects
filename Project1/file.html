@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .question {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <div class="question" id="question">
+            <!-- Question text will be displayed here -->
+        </div>
+        <div class="options" id="options">
+            <!-- Options will be displayed here -->
+        </div>
+        <button id="nextBtn">Next Question</button>
+    </div>
+
+    <script>
+        const quizData = [
+            {
+                question: "What is the capital of France?",
+                options: ["Paris", "London", "Berlin", "Madrid"],
+                answer: "Paris"
+            },
+            {
+                question: "What is 2 + 2?",
+                options: ["3", "4", "5", "6"],
+                answer: "4"
+            },
+            // Add more questions similarly
+        ];
+
+        let currentQuestionIndex = 0;
+
+        // Function to load next question
+        function loadNextQuestion() {
+            const currentQuestion = quizData[currentQuestionIndex];
+            const questionElement = document.getElementById('question');
+            const optionsElement = document.getElementById('options');
+            
+            questionElement.innerText = currentQuestion.question;
+            optionsElement.innerHTML = '';
+
+            currentQuestion.options.forEach((option) => {
+                const optionElement = document.createElement('button');
+                optionElement.innerText = option;
+                optionElement.addEventListener('click', () => {
+                    // Check if the selected option is correct
+                    if (option === currentQuestion.answer) {
+                        alert('Correct!');
+                    } else {
+                        alert('Incorrect!');
+                    }
+                });
+                optionsElement.appendChild(optionElement);
+            });
+
+            // Increment question index
+            currentQuestionIndex++;
+        }
+
+        // Load the first question when the page loads
+        window.onload = loadNextQuestion;
+
+        // Attach click event to the "Next Question" button
+        document.getElementById('nextBtn').addEventListener('click', loadNextQuestion);
+    </script>
+</body>
+</html>

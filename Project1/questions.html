@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./question.css">
+</head>
+<body>
+    <div id="nav">
+        <img src="https://www.pirnav.com/images/pirnav_logo.png" alt="PIRNAV Logo">
+        <a href="">Contact Us</a>
+    </div>
+    <div id="container">
+        <h1 id="user">Welcome : <span class="user"></span></h1>
+        <section id="subContainer" class="body">
+            <h2 id="question">
+                Question tag
+            </h2>
+            <ul id="option">
+                <li>
+                    <input type="radio" class="answer" id="option-a" name="quiz-options">
+                    <label for="option-a" id="text_option_a"> Option A</label>
+                </li>
+                <li>
+                    <input type="radio" class="answer" id="option-b" name="quiz-options">
+                    <label for="option-b" id="text_option_b"> Option B</label>
+                </li>
+                <li>
+                    <input type="radio" class="answer" id="option-c" name="quiz-options">
+                    <label for="option-c" id="text_option_c"> Option C</label>
+                </li>
+                <li>
+                    <input type="radio" class="answer" id="option-d" name="quiz-options">
+                    <label for="option-d" id="text_option_d"> Option D</label>
+                </li>
+            </ul>
+    
+            <button id="submit">Next</button>
+        </section>
+    </div>
+    <script src="./questions.js"></script>
+</body>
+</html>
